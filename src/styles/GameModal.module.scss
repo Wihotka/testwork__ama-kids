@@ -1,0 +1,146 @@
+@import './variables.scss';
+
+.gameModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba($color: $black, $alpha: 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: .4s ease;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    min-width: 320px;
+    max-width: fit-content;
+    min-height: 320px;
+    padding: 16px 32px;
+    border: 2px solid $black;
+    border-radius: 10px;
+    background-color: $white;
+    transform: scale(1);
+    transition: .4s ease;
+  }
+  &__content.hidden {
+    transform: scale(0);
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__heading {
+    margin-bottom: 8px;
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+  &__description {
+    margin-bottom: 16px;
+    font-weight: 500;
+    font-style: italic;
+  }
+
+  &__rules {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 18px;
+  }
+
+  &__rule {
+    display: grid;
+    grid-template-columns: 5fr repeat(3, 1fr);
+    gap: 4px;
+    width: 100%;
+    margin-bottom: 4px;
+    font-weight: 500;
+    text-align: start;
+  }
+  &__rule:last-child {
+    margin-bottom: 0;
+  }
+
+  &__control {
+    width: 24px;
+    margin: 0 auto;
+    border: 1px solid $black;
+    border-radius: 5px;
+    color: $white;
+    background-color: $orange;
+    font-weight: 500;
+    font-size: 18px;
+    transition: .2s ease;
+    cursor: pointer;
+  }
+
+  &__value {
+    font-weight: 400;
+    text-align: center;
+    text-decoration: underline;
+  }
+
+  &__logo {
+    align-self: center;
+    width: 160px;
+    height: 160px;
+
+  }
+
+  &__btn {
+    align-self: flex-end;
+    width: fit-content;
+    margin-top: auto;
+    padding: 8px 16px;
+    border: 2px solid $black;
+    border-radius: 5px;
+    color: $white;
+    background-color: $orangeVivid;
+    font-weight: 500;
+    font-size: 18px;
+    transition: .2s ease;
+    cursor: pointer;
+  }
+
+  // states
+  &__btn:active {
+    border-color: $orange;
+    background-color: $orange;
+    transform: scale(0.95);
+  }
+
+  &__control:active {
+    background-color: $orangeVivid;
+  }
+
+  @media (hover: hover) {
+    &__btn:hover {
+      border-color: $orange;
+    }
+    &__btn:active {
+      border-color: $orange;
+      background-color: $orange;
+      transform: scale(0.95);
+    }
+
+    &__control:hover {
+      border-color: $orangeVivid;
+    }
+    &__control:active {
+      background-color: $orangeVivid;
+    }
+  }
+}
+.gameModal.active {
+  opacity: 1;
+  pointer-events: all;
+}

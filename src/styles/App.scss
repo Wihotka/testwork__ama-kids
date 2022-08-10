@@ -1,0 +1,41 @@
+@import './variables.scss';
+
+.App {
+  min-height: 100vh;
+  background: linear-gradient(90deg, $orange 0%, $greyLight 50%, $orange 100%);
+  text-align: center;
+
+  &__header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 64px;
+    margin-bottom: 48px;
+  }
+
+  &__header-crossline {
+    width: 50%;
+    border-bottom: 4px solid $black;
+  }
+
+  &__header-title {
+    position: absolute;
+    padding: 6px 24px 8px;
+    border: 2px solid $black;
+    border-radius: 5px;
+    color: $white;
+    background-color: $orangeVivid;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}

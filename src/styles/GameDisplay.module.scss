@@ -1,0 +1,33 @@
+@import './variables.scss';
+
+.gameDisplay {
+  position: sticky;
+  bottom: 8px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 42px);
+  justify-content: center;
+  gap: 12px;
+  padding-right: 42px;
+  margin-bottom: 32px;
+
+  &__block {
+    width: fit-content;
+    margin: 0 auto;
+    padding: 4px;
+    border: 1px solid $black;
+    border-radius: 5px;
+    background-color: $grey;
+    filter: drop-shadow(3px 3px 3px $grey);
+  }
+
+  @media (max-width: 700px) {
+    & {
+      transform: scale(0.75);
+    }
+  }
+  @media (max-width: 520px) {
+    & {
+      transform: scale(0.6);
+    }
+  }
+}

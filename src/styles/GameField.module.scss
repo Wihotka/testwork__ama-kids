@@ -1,0 +1,224 @@
+@import './variables.scss';
+
+.gameField {
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 42px;
+  }
+
+  &__layoutY {
+    position: absolute;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 16px;
+    width: fit-content;
+    height: 100%;
+    padding: 42px 0;
+  }
+
+  &__layoutX {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 16px;
+    width: 100%;
+    height: fit-content;
+    padding: 0 42px;
+  }
+
+  &__layoutItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 4px 8px;
+    border: 1px solid $black;
+    border-radius: 5px;
+    color: $white;
+    background-color: $orangeVivid;
+    filter: drop-shadow(4px 4px 3px $grey);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  &__row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__btn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 34px;
+    border: 2px solid $black;
+    border-radius: 10px;
+    background-color: $orange;
+    filter: drop-shadow(6px 6px 5px $grey);
+    transition: .2s ease;
+    cursor: pointer;
+  }
+
+  @keyframes showImg {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  &__start {
+    position: absolute;
+    bottom: 8px;
+    width: 36px;
+    height: 36px;
+    opacity: 1;
+    animation: showImg .4s ease alternate;
+  }
+
+  &__treasure {
+    position: absolute;
+    top: 4px;
+    left: 6px;
+    width: 24px;
+    height: 24px;
+    opacity: 1;
+    animation: showImg .4s ease alternate;
+  }
+
+  &__finish {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 24px;
+    height: 24px;
+    opacity: 1;
+    animation: showImg .4s ease alternate;
+  }
+  &__finish_fail {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 24px;
+    height: 24px;
+    transform: rotateZ(180deg);
+    opacity: 1;
+    animation: showImg .4s ease alternate;
+  }
+
+  &__restart {
+    position: fixed;
+    top: 36px;
+    right: 20%;
+    padding: 20px 5px;
+    border: 5px solid $black;
+    border-radius: 100%;
+    color: $white;
+    background-color: $green;
+    font-weight: 700;
+    font-size: 18px;
+    text-transform: uppercase;
+    transform: scale(0);
+    transition: .2s ease;
+    cursor: pointer;
+  }
+  &__restart.active {
+    transform: scale(1);
+  }
+
+  &__menu {
+    position: fixed;
+    top: 46px;
+    left: 20%;
+    padding: 10px 12px;
+    border: 5px solid $black;
+    border-radius: 10px;
+    color: $white;
+    background-color: $green;
+    font-weight: 700;
+    font-size: 18px;
+    text-transform: uppercase;
+    transform: scale(0);
+    transition: .2s ease;
+    cursor: pointer;
+  }
+  &__menu.active {
+    transform: scale(1);
+  }
+
+  // states
+  &__btn:active {
+    background-color: $orangeVivid;
+    transform: scale(0.95);
+  }
+
+  &__restart:active {
+    border-color: $grey;
+    background-color: $orange;
+    transform: scale(0.95);
+  }
+
+  &__menu:active {
+    border-color: $grey;
+    background-color: $orange;
+    transform: scale(0.95);
+  }
+
+  @media (hover: hover) {
+    &__btn:hover {
+      border-color: $orangeVivid;
+    }
+    &__btn:active {
+      background-color: $orangeVivid;
+      transform: scale(0.95);
+    }
+
+    &__restart:hover {
+      background-color: $orangeVivid;
+    }
+    &__restart:active {
+      border-color: $grey;
+      background-color: $orange;
+      transform: scale(0.95);
+    }
+
+    &__menu:hover {
+      background-color: $orangeVivid;
+    }
+    &__menu:active {
+      border-color: $grey;
+      background-color: $orange;
+      transform: scale(0.95);
+    }
+  }
+
+  @media (max-width: 700px) {
+    &__content {
+      transform: scale(0.75) translateY(-100px);
+    }
+  }
+  @media (max-width: 520px) {
+    &__content {
+      transform: scale(0.6);
+    }
+  }
+}
