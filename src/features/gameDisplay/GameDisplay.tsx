@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import { useAppSelector } from '../../app/hooks';
 import { RootState } from '../../app/store';
 import GameArrow from '../gameArrow/GameArrow';
@@ -24,4 +24,4 @@ const GameDisplay = () => {
   );
 }
 
-export default GameDisplay;
+export default React.memo(GameDisplay);

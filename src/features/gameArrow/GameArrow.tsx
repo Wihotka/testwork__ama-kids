@@ -1,3 +1,4 @@
+import React from 'react';
 import { useEffect, useState } from 'react';
 import useSound from 'use-sound';
 import { useAppSelector } from '../../app/hooks';
@@ -46,4 +47,4 @@ const GameArrow = ({ index }: GameArrowProps) => {
   );
 }
 
-export default GameArrow;
+export default React.memo(GameArrow);

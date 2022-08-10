@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React from 'react';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { RootState } from '../../app/store';
 import useSound from 'use-sound';
@@ -38,6 +38,8 @@ const GameModal = ({ isActive, setIsActive }: GameModalProps) => {
     dispatch(startGame());
   }
 
+  console.log('MODAL');
+
   return (
     <div className={isActive ? styles.gameModal + ' ' + styles.active : styles.gameModal}>
       <div className={isActive ? styles.gameModal__content : styles.gameModal__content + ' ' + styles.hidden}>
@@ -69,4 +71,4 @@ const GameModal = ({ isActive, setIsActive }: GameModalProps) => {
   );
 }
 
-export default GameModal;
+export default React.memo(GameModal);

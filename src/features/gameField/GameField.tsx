@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import useSound from 'use-sound';
 import { useAppSelector, useAppDispatch } from '../../app/hooks';
 import { RootState } from '../../app/store';
@@ -183,4 +183,4 @@ const GameField = () => {
   );
 }
 
-export default GameField;
+export default React.memo(GameField);
